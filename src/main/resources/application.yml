@@ -1,0 +1,26 @@
+
+#  OFF TRACE DEBUG INFO
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: 'OFF'
+        hikari.HikariConfig: DEBUG
+    root: INFO
+management:
+  endpoint:
+    health:
+      show-details: always
+spring:
+  datasource:
+    hikari:
+      connection-test-query: SELECT 1
+      connectionTimeout: 30000
+      idleTimeout: 600000
+      maxLifetime: 1800000
+    password: mytestdb
+    url: jdbc:mysql://localhost:3306/mytestdb
+    username: mytestdb
+  flyway:
+    enabled: false
